@@ -1,0 +1,2 @@
+- [x] Change "videourl" to "videoUrl" in Portfolio.tsx for id 2 item
+- [x] Update PortfolioGrid.tsx to conditionally render <video> if videoUrl exists, otherwise <img>

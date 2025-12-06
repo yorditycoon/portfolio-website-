@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 45 10% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 45 10% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 45 10% 95%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 45 10% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 48 100% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 10% 95%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 48 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom Design Tokens */
+    --gold: 48 100% 50%;
+    --gold-dark: 45 100% 40%;
+    --gold-light: 48 100% 65%;
+    --charcoal: 0 0% 8%;
+    --charcoal-light: 0 0% 12%;
+    --smoke: 0 0% 20%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(48 100% 50%) 0%, hsl(38 100% 45%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%) 0%, hsl(0 0% 8%) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(0 0% 4% / 0.9) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 4% / 0.7) 0%, hsl(0 0% 4% / 0.4) 50%, hsl(48 100% 50% / 0.1) 100%);
+
+    /* Shadows */
+    --shadow-gold: 0 0 40px hsl(48 100% 50% / 0.3);
+    --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+
+    /* Fonts */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 45 10% 95%;
+    --sidebar-primary: 48 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 45 10% 95%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 48 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 45 10% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .btn-gold {
+    @apply bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-sm uppercase tracking-wider;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-[var(--shadow-gold)] hover:scale-105;
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-primary text-primary bg-transparent font-semibold px-8 py-4 rounded-sm uppercase tracking-wider;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-primary hover:text-primary-foreground hover:shadow-[var(--shadow-gold)];
+  }
+
+  .card-portfolio {
+    @apply relative overflow-hidden rounded-sm bg-card;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:shadow-[var(--shadow-card)] hover:scale-[1.02];
+  }
+
+  .card-portfolio::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: var(--gradient-overlay);
+  }
+
+  .card-portfolio:hover::before {
+    @apply opacity-100;
+  }
+
+  .section-title {
+    @apply text-5xl md:text-7xl font-display uppercase tracking-wider;
+  }
+
+  .film-strip {
+    @apply relative;
+  }
+
+  .film-strip::before,
+  .film-strip::after {
+    content: '';
+    @apply absolute top-0 bottom-0 w-8 bg-repeat-y;
+    background-image: 
+      repeating-linear-gradient(
+        180deg,
+        hsl(var(--primary)) 0px,
+        hsl(var(--primary)) 6px,
+        transparent 6px,
+        transparent 12px
+      );
+  }
+
+  .film-strip::before {
+    @apply left-0;
+  }
+
+  .film-strip::after {
+    @apply right-0;
+  }
+
+  .nav-link {
+    @apply relative text-foreground/80 font-medium uppercase tracking-widest text-sm;
+    @apply transition-colors duration-300 hover:text-primary;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-primary;
+    @apply transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-primary;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
