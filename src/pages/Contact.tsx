@@ -128,7 +128,7 @@ const Contact = () => {
                   className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-body font-semibold rounded-sm hover:bg-[#128C7E] transition-colors duration-300 mb-10"
                 >
                   <MessageCircle size={20} />
-                  Chat on Telegram
+                  Chat Telegram
                 </a>
 
                 {/* Social Links */}
