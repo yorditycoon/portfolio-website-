@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Play } from "lucide-react";
+import shebaVideo from "@/assets/SHEBA.mp4";
 
 export function HighlightReel() {
   const ref = useRef(null);
@@ -29,16 +30,13 @@ export function HighlightReel() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative aspect-video max-w-5xl mx-auto rounded-sm overflow-hidden group"
         >
-          {/* Placeholder for video - using iframe for demo */}
-          <div className="absolute inset-0 bg-card">
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&rel=0"
-              title="Highlight Reel"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
-          </div>
+          {/* Video */}
+          <video
+            src={shebaVideo}
+            controls
+            className="w-full h-full object-cover"
+            title="Highlight Reel"
+          />
 
           {/* Decorative Frame */}
           <div className="absolute inset-0 border-2 border-primary/20 rounded-sm pointer-events-none" />

@@ -109,13 +109,13 @@ const portfolioItems = [
   {
      id: 11,
     category: "weddings",
-    thumbnail: weddings1,
+    videoUrl: weddings1,
   },
   {
     id: 12,
 
     category: "weddings",
-    videoUrl: weddings2
+    thumbnail: weddings2
   },
   {
     id: 13,

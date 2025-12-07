@@ -26,7 +26,7 @@ const contactInfo = [
     icon: Phone,
     label: "Phone",
     value: "+251 18 040 607",
-    href: "tel:+25118040607",
+    href: "tel:+251918040607",
   },
   {
     icon: MapPin,
@@ -77,7 +77,7 @@ const Contact = () => {
     setIsSubmitting(false);
   };
 
-  const whatsappMessage = encodeURIComponent(
+  const telegramMessage = encodeURIComponent(
     "Hi! I'm interested in your videography services."
   );
 
@@ -158,13 +158,13 @@ const Contact = () => {
 
                 {/* WhatsApp Button */}
                 <a
-                  href={`https://wa.me/25118040607?text=${whatsappMessage}`}
+                  href={`https://t.me/251918040607?text=${telegramMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-body font-semibold rounded-sm hover:bg-[#128C7E] transition-colors duration-300 mb-10"
                 >
                   <MessageCircle size={20} />
-                  Chat on WhatsApp
+                  Chat on Telegram
                 </a>
 
                 {/* Social Links */}
