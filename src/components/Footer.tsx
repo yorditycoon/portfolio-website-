@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { Instagram, Youtube, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Youtube, Facebook, Video, Mail, Phone, MapPin } from "lucide-react";
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/kimi_pido/", label: "Instagram" },
+  { icon: Video, href: "https://www.tiktok.com/@kimi_pido", label: "TikTok" },
+  { icon: Facebook, href: "https://www.facebook.com/miki.gebrehiwot.90", label: "Facebook" },
 ];
 
 export function Footer() {
@@ -91,7 +91,7 @@ export function Footer() {
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors font-body"
               >
                 <Phone size={18} />
-                +251 18 040 607
+                +251 918 040 607
               </a>
               <div className="flex items-start gap-3 text-muted-foreground font-body">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
@@ -104,7 +104,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm font-body">
-            © {new Date().getFullYear()} Mikey G/Hiwot. All rights reserved.
+            © {new Date().getFullYear()} Nova Creatives. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a
