@@ -41,7 +41,7 @@ export function PortfolioGrid({ items, showAll = false }: PortfolioGridProps) {
         <motion.div
           key={item.id}
           initial={{ opacity: 0, y: 40 }}
-          animate={View ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: index * 0.1 }}
           className="card-portfolio aspect-[4/3] cursor-pointer"
           onMouseEnter={() => setHoveredId(item.id)}
