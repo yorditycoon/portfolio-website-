@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Play } from "lucide-react";
-import shebaVideo from "@/assets/SHEBA.mp4";
 
 export function HighlightReel() {
   const ref = useRef(null);
@@ -30,17 +29,20 @@ export function HighlightReel() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative aspect-video max-w-5xl mx-auto rounded-sm overflow-hidden group"
         >
-          {/* Video */}
-          <video
-            src={shebaVideo}
-            controls
-            className="w-full h-full object-cover"
-            title="Highlight Reel"
-          />
+          {/* YouTube Video */}
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/2-YEOommUV4?si=ndaggoIHuxE51mku"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
 
           {/* Decorative Frame */}
           <div className="absolute inset-0 border-2 border-primary/20 rounded-sm pointer-events-none" />
-          
+
           {/* Corner Accents */}
           <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary" />
           <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary" />
@@ -54,7 +56,7 @@ export function HighlightReel() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center text-muted-foreground mt-8 max-w-2xl mx-auto font-body"
         >
-          A curated collection of my finest work spanning weddings, commercial shoots, 
+          A curated collection of my finest work spanning weddings, commercial shoots,
           and creative projects. Every frame crafted with passion and precision.
         </motion.p>
       </div>
