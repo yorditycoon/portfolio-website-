@@ -39,6 +39,16 @@ import marketings3 from "@/assets/retouch_2025103121381060.jpg";
 import marketings4 from "@/assets/11.jpg";
 import marketings5 from "@/assets/141.jpg";
 import marketings6 from "@/assets/retouch_2025103121384224.jpg";
+import modeling9 from "@/assets/110.jpg";
+import modeling10 from "@/assets/111.jpg";
+import modeling11 from "@/assets/112.jpg";
+import modeling12 from "@/assets/113.jpg";
+import modeling13 from "@/assets/114.jpg";
+import modeling14 from "@/assets/115.jpg";
+import marketings7 from "@/assets/12.mp4";
+import marketings8 from "@/assets/13.mp4";
+import marketings9 from "@/assets/14.mp4";
+import marketings10 from "@/assets/15.mp4";
 
 
 
@@ -230,6 +240,56 @@ const portfolioItems = [
     id: 35,
     category: "marketings",
     thumbnail: marketings6,
+},
+{
+    id: 42,
+    category: "marketings",
+    videoUrl: marketings7,
+},
+{
+    id: 43,
+    category: "marketings",
+    videoUrl: marketings8,
+},
+{
+    id: 44,
+    category: "marketings",
+    videoUrl: marketings9,
+},
+{
+    id: 45,
+    category: "marketings",
+    videoUrl: marketings10,
+},
+{
+    id: 36,
+    category: "models",
+    thumbnail: modeling9,
+},
+{
+    id: 37,
+    category: "models",
+    thumbnail: modeling10,
+},
+{
+    id: 38,
+    category: "models",
+    thumbnail: modeling11,
+},
+{
+    id: 39,
+    category: "models",
+    thumbnail: modeling12,
+},
+{
+    id: 40,
+    category: "models",
+    thumbnail: modeling13,
+},
+{
+    id: 41,
+    category: "models",
+    thumbnail: modeling14,
 },
 
 
